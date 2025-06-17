@@ -28,7 +28,13 @@ function Book(title, author, pages, read){
     }
 }
 
-function addBookToLibrary(){
-    const newBook = new Book("Ogbori Ode", "Ka kan fo", 187, false)
+function addBookToLibrary(title, author, pages, read){
+    const newBook = new Book(title, author, pages, read)
     myLibrary.push(newBook)
 }
+
+addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
+addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
+addBookToLibrary("Mindset", "Katherine", 504, false)
+console.log(myLibrary)
+console.log(myLibrary[1].info())
