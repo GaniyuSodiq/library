@@ -9,10 +9,36 @@ body{
 }
 
 .container {
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 10fr;
 }
 
 aside{
     background-color: green;
+}
+
+main{
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3%;
+}
+
+#main-lhs{
+    background-color: aqua;
+}
+
+#main-rhs{
+    background-color: darkmagenta;
+}
+
+#books-box{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.cover img{
+    width: 120px;
+    height: 170px;
 }
