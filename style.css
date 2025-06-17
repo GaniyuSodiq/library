@@ -36,9 +36,20 @@ main{
 #books-box{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    height: 300px;
+    overflow-y: auto;
 }
 
 .cover img{
-    width: 120px;
-    height: 170px;
+    width: 100px;
+    height: 130px;
+}
+
+#book-stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#book-stats > div{
+    display: flex;
 }
