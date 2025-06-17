@@ -25,12 +25,27 @@ main{
     gap: 3%;
 }
 
+
+/* MAIN LEFT HAND SIDE */
+
 #main-lhs{
     background-color: aqua;
+    display: grid;
+    /* justify-content: stretch; */
 }
 
-#main-rhs{
-    background-color: darkmagenta;
+#search-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0 20px 0;
+}
+#search-box input{
+    border: none;
+    outline: none;
+    width: 100%;
 }
 
 #books-box{
@@ -52,4 +67,9 @@ main{
 
 #book-stats > div{
     display: flex;
+}
+
+/* MAIN RIGHT HAND SIDE */
+#main-rhs{
+    background-color: darkmagenta;
 }
