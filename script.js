@@ -19,6 +19,9 @@
 const myLibrary = []
 
 function Book(title, author, pages, read){
+    if (!new.target){
+        throw Error("You must use the 'new' keyword while to create the object")
+    }
     this.title = title
     this.author = author
     this.pages = pages
