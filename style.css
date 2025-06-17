@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: rgb(255, 251, 247);
+    background-color: rgb(245, 245, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -29,7 +30,7 @@ main{
 /* MAIN LEFT HAND SIDE */
 
 #main-lhs{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: grid;
     /* justify-content: stretch; */
 }
@@ -40,12 +41,17 @@ main{
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    padding: 0 20px 0;
+    padding: 10px 20px;
 }
 #search-box input{
     border: none;
     outline: none;
     width: 100%;
+    font-size: .9rem;
+}
+
+#search-box label, #search-box input::placeholder{
+    opacity: .2;
 }
 
 #books-box{
