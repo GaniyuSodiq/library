@@ -108,9 +108,33 @@ main{
     align-content:space-between;
 }
 
+.book h5{
+    font-size: .7rem;
+    margin-bottom: -5px;
+}
+
 .cover img{
     width: 100%;
     height: 130px;
+    border-radius: 2px;
+}
+
+.book-author{
+    font-size: .7rem;
+}
+
+#read-delete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#read-delete label{
+    font-size: .9rem;
+}
+
+#read-delete button{
+    font-size: .5rem;
 }
 
 #book-stats{
