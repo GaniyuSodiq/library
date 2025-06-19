@@ -40,9 +40,9 @@ main{
 /* MAIN LEFT HAND SIDE */
 
 #main-lhs{
-    /* background-color: aqua; */
-    /* display: grid; */
-    /* justify-content: stretch; */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #search-box{
@@ -164,11 +164,22 @@ main{
 .fa-book{
     color: #00a5cf;
 }
+#total-books .stat-img{
+    background-color: #00a6cf49;
+}
+
 .fa-square-pen{
     color: #d68c45;
 }
+#total-authors .stat-img{
+    background-color: #d68b454c;
+}
+
 .fa-book-open-reader{
     color: #52b788;
+}
+#total-reads .stat-img{
+    background-color: #52b78853;
 }
 
 
@@ -181,6 +192,7 @@ main{
 
 .stat-fig h4{
     font-size: 1.5rem;
+    font-weight:300;
 }
 
 .stat-fig span{
