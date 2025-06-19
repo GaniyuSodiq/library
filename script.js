@@ -40,15 +40,39 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook)
 }
 
-addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
-addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
-addBookToLibrary("Mindset", "Katherine", 504, false)
-// console.log(myLibrary)
-// console.log(myLibrary[1].info())
-// let uuid = self.crypto.randomUUID();
-// console.log(uuid); // for example "36b8f84d-df4e-4d49-b662-bcde71a8764f"
+// addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
+// addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
+// addBookToLibrary("Mindset", "Katherine", 504, false)
 
-// fn to display each book on the page
+
+// ASS. QUESTION 3 - Write a function that loops through the array and displays each book on the page.
+
+// store the book data in an array first
+// when developing applications, we want the flexibility to recreate elements... 
+// ...(like our library and its books) in various ways using the same underlying data.
+// you should think of these responsibilities separately
+
+// CREATE ALL THE HTML ELEMENTS
+// PUT THEIR CLASSES AND IDS
+// PUT IN THE VALUES FROM USER
+// PUSH THE CONTAINER ELEMENT TO SCREEN
+
+function createdBook(){
+    // CREATE ALL THE HTML ELEMENTS
+    const container = document.createElement("div")
+    const imgContainer = document.createElement("div")
+    const imgItself = document.createElement("img")
+    const bookTitle = document.createElement("h5")
+    const bookAuthor = document.createElement("span")
+    const readDeleteContainer = document.createElement("div")
+    const readDeleteLabel = document.createElement("label")
+    const readDeleteInput = document.createElement("input")
+    const readDeleteButton = document.createElement("button")
+
+    // PUT THEIR CLASSES AND IDS
+
+}
+
 function displayBook() {
     myLibrary.forEach(function(book){
         console.log(book)
