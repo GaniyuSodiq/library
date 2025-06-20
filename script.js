@@ -78,11 +78,12 @@ addBookToLibrary("Mindset", "Katherine", 504, false)
 //     bookTitle.innerText = 
 // }
 
-const createdBook = []
+const myBooks = []
+const booksBox = document.querySelector("#books-box")
 
 function displayBook() {
     myLibrary.forEach(function (book) {
-        console.log(book)
+        // console.log(book)
         // CREATE ALL THE HTML ELEMENTS
         const container = document.createElement("div")
         const imgContainer = document.createElement("div")
@@ -116,15 +117,20 @@ function displayBook() {
         readDeleteContainer.appendChild(readDeleteButton)
 
         // PUT EVERYELEMENT IN THE BOOK CONATAINER
-
         container.appendChild(imgContainer)
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
         container.appendChild(readDeleteContainer)
 
-        createdBook.push(container)
+        myBooks.push(container)
+    })
+}
+
+function createdBook(){
+    myBooks.forEach(function(abook){
+        booksBox.appendChild(abook)
     })
 }
 
 displayBook()
-console.log(createdBook)
+createdBook()
