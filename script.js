@@ -40,9 +40,9 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook)
 }
 
-// addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
-// addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
-// addBookToLibrary("Mindset", "Katherine", 504, false)
+addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
+addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
+addBookToLibrary("Mindset", "Katherine", 504, false)
 
 
 // ASS. QUESTION 3 - Write a function that loops through the array and displays each book on the page.
@@ -57,26 +57,74 @@ function addBookToLibrary(title, author, pages, read) {
 // PUT IN THE VALUES FROM USER
 // PUSH THE CONTAINER ELEMENT TO SCREEN
 
-function createdBook(){
-    // CREATE ALL THE HTML ELEMENTS
-    const container = document.createElement("div")
-    const imgContainer = document.createElement("div")
-    const imgItself = document.createElement("img")
-    const bookTitle = document.createElement("h5")
-    const bookAuthor = document.createElement("span")
-    const readDeleteContainer = document.createElement("div")
-    const readDeleteLabel = document.createElement("label")
-    const readDeleteInput = document.createElement("input")
-    const readDeleteButton = document.createElement("button")
+// function createdBook(){
+//     // CREATE ALL THE HTML ELEMENTS
+//     const container = document.createElement("div")
+//     const imgContainer = document.createElement("div")
+//     const imgItself = document.createElement("img")
+//     const bookTitle = document.createElement("h5")
+//     const bookAuthor = document.createElement("span")
+//     const readDeleteContainer = document.createElement("div")
+//     const readDeleteLabel = document.createElement("label")
+//     const readDeleteInput = document.createElement("input")
+//     const readDeleteButton = document.createElement("button")
 
-    // PUT THEIR CLASSES AND IDS
+//     // PUT THEIR CLASSES AND IDS
+//     imgContainer.classList.add("cover")
+//     imgItself.src = "/images/eegu-alare.jpg"
+//     imgItself.alt = "Eegun-Alare"
+//     imgContainer.appendChild(imgItself)
 
-}
+//     bookTitle.innerText = 
+// }
+
+const createdBook = []
 
 function displayBook() {
-    myLibrary.forEach(function(book){
+    myLibrary.forEach(function (book) {
         console.log(book)
+        // CREATE ALL THE HTML ELEMENTS
+        const container = document.createElement("div")
+        const imgContainer = document.createElement("div")
+        const imgItself = document.createElement("img")
+        const bookTitle = document.createElement("h5")
+        const bookAuthor = document.createElement("span")
+        const readDeleteContainer = document.createElement("div")
+        const readDeleteLabel = document.createElement("label")
+        const readDeleteInput = document.createElement("input")
+        const readDeleteButton = document.createElement("button")
+
+        // PUT THEIR CLASSES AND IDS
+        imgContainer.classList.add("cover")
+        imgItself.src = "/images/eegu-alare.jpg"
+        imgItself.alt = "Eegun-Alare"
+        imgContainer.appendChild(imgItself)
+
+        bookTitle.innerText = book.title
+
+        bookAuthor.classList.add("book-author")
+        bookAuthor.innerText = book.author
+
+        readDeleteContainer.setAttribute("id", "read-delete")
+        readDeleteLabel.textContent = "Read? "
+        readDeleteLabel.for = "read"
+        readDeleteInput.type = "checkbox"
+        readDeleteInput.id = "read"
+        readDeleteButton.textContent = "❌"
+        readDeleteLabel.appendChild(readDeleteInput)
+        readDeleteContainer.appendChild(readDeleteLabel)
+        readDeleteContainer.appendChild(readDeleteButton)
+
+        // PUT EVERYELEMENT IN THE BOOK CONATAINER
+
+        container.appendChild(imgContainer)
+        container.appendChild(bookTitle)
+        container.appendChild(bookAuthor)
+        container.appendChild(readDeleteContainer)
+
+        createdBook.push(container)
     })
 }
 
 displayBook()
+console.log(createdBook)
