@@ -17,10 +17,40 @@
         </form>
     </dialog> -->
 
-    <dialog>
+    <!-- USING THE dialog.showModal() and dialog.close() -->
+    <!-- <dialog>
         <button autofocus>Close</button>
         <p>This modal dialog has a groovy backdrop!</p>
     </dialog>
-    <button>Open the dialog</button>
+    <button>Open the dialog</button> -->
+
+    <!-- A modal dialog containing a form -->
+    <dialog id="favDialog">
+        <form>
+            <p>
+                <label>
+                    Favourite Animal:
+                    <select name="" id="">
+                        <option value="default">Choose...</option>
+                        <option value="">Spider Monkey</option>
+                        <option value="">Red Panda</option>
+                        <option value="">Brine Shrimp</option>
+                    </select>
+                </label>
+            </p>
+            <div>
+                <!-- when this btn is clicked, the form method is changed to method = "dialog"
+                the default value of form method is "GET"
+                and if form method is dialog... 
+                the value is the form are saved but not sent -->
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button value="default" id="confirmBtn">Confirm Button</button>
+            </div>
+        </form>
+    </dialog>
+    <p>
+        <button id="showDialog">Show the dialog</button>
+    </p>
+    <output></output>
 </body>
 </html>
