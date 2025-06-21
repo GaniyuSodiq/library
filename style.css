@@ -93,10 +93,13 @@ main{
 #quote-box > span:nth-of-type(2){
     font-size: .8rem;
 }
-
+#add-book-section{
+    display: flex;
+    justify-content: space-between;    
+    margin-bottom: 10px;
+}
 #continue-reading h4{
     font-weight: 400;
-    margin-bottom: 10px;
 }
 
 #books-box{
