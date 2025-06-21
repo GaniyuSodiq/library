@@ -18,6 +18,8 @@
 
 // array to store each book object
 const myLibrary = []
+const myBooks = []
+const booksBox = document.querySelector("#books-box")
 
 // constructor for each book template
 function Book(title, author, pages, read) {
@@ -78,9 +80,6 @@ addBookToLibrary("Mindset", "Katherine", 504, false)
 //     bookTitle.innerText = 
 // }
 
-const myBooks = []
-const booksBox = document.querySelector("#books-box")
-
 function displayBook() {
     myLibrary.forEach(function (book) {
         // console.log(book)
@@ -116,12 +115,15 @@ function displayBook() {
         readDeleteContainer.appendChild(readDeleteLabel)
         readDeleteContainer.appendChild(readDeleteButton)
 
+        container.classList.add("book")
+
         // PUT EVERYELEMENT IN THE BOOK CONATAINER
         container.appendChild(imgContainer)
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
         container.appendChild(readDeleteContainer)
 
+        // PUT THE CONTAINER IN THE ARRAY OF MYBOOKS
         myBooks.push(container)
     })
 }
