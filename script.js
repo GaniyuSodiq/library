@@ -20,6 +20,13 @@
 const myLibrary = []
 const myBooks = []
 const booksBox = document.querySelector("#books-box")
+const addBookBtn = document.querySelector("#add-book-btn")
+const newBookDialog = document.querySelector("#new-book-dialog")
+const newBookSubmit = document.querySelector("#new-book-submit")
+
+addBookBtn.addEventListener("click", ()=>{
+    newBookDialog.showModal()
+})
 
 // constructor for each book template
 function Book(title, author, pages, read) {

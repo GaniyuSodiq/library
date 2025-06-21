@@ -26,13 +26,14 @@ showButton.addEventListener("click", () => {
 
 // 3 WAYS TO CLOSE MODAL DIALOGS
 
+// 1 USING ESC KEY
+
 // 'Cancel' closes the dialog without submitting bcs of the [formmethod="dialog"]
 // but the dialog will close and the data retainined. trigger a close event
 
-// 1 USING ESC KEY
-
 
 // 2
+// close here means everything that can close the dialog, esc close btn etc
 favDialog.addEventListener("close", (e) => {
     outputBox.value = favDialog.returnValue === "default"
         ? "No return value."
@@ -40,7 +41,7 @@ favDialog.addEventListener("close", (e) => {
 })
 
 // 3
-confirmBtn.addEventListener("click", (event)=>{
+confirmBtn.addEventListener("click", (event) => {
     event.preventDefault() // We dont want to submit this fake form
     favDialog.close(selectEl.value) // Have to send the select box value here
 })
