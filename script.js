@@ -41,7 +41,7 @@ newBookSubmit.addEventListener("click", (e) => {
     e.preventDefault()
     booksBox.textContent = ""
     addBookToLibrary(newBookTitleInput.value, newBookAuthorInput.value, newBookPagesInput.value, newBookReadInput.checked)
-    makeTheDivBook()
+    makeTheDivBook() // makeTheDivBook from the library
     newBookDialog.close()
 })
 
@@ -123,7 +123,6 @@ function makeTheDivBook() {
         const readDeleteLabel = document.createElement("label")
         const readDeleteInput = document.createElement("input")
         const readDeleteButton = document.createElement("button")
-        const uuidValue = document.createElement("span")
 
         // PUT THEIR CLASSES AND IDS
         imgContainer.classList.add("cover")
@@ -135,7 +134,6 @@ function makeTheDivBook() {
 
         bookAuthor.classList.add("book-author")
         bookAuthor.innerText = book.author
-        uuidValue.textContent = book.uuid
 
         readDeleteContainer.setAttribute("id", "read-delete")
         readDeleteLabel.textContent = "Read? "
@@ -150,6 +148,21 @@ function makeTheDivBook() {
         container.classList.add("book")
 
         // PUT EVERYELEMENT IN THE BOOK CONATAINER
+        readDeleteButton.dataset.uuid = book.uuid // this gives the conatiner an attr of data-uuid = uuid number...
+        // ... i use this number to track each conatiner
+        // ... the track is use in this proj when deleting 
+        readDeleteButton.addEventListener("click", (e)=>{
+            console.log(e.target.dataset.uuid)
+            myLibrary.forEach(function(abook){
+                // console.log(abook.uuid)
+                if(abook.uuid === e.target.dataset.uuid){
+                    console.log("We found it!")
+                    console.log(abook)
+                }
+            })
+            // makeTheDivBook()
+        })
+
         container.appendChild(imgContainer)
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
@@ -160,6 +173,8 @@ function makeTheDivBook() {
         booksBox.appendChild(container)
     })
 }
+
+
 
 // function pushBookToPage() {
 //     myBooks.forEach(function (abook) {
