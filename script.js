@@ -28,6 +28,7 @@ addBookBtn.addEventListener("click", ()=>{
     newBookDialog.showModal()
 })
 
+
 // constructor for each book template
 function Book(title, author, pages, read) {
     if (!new.target) {

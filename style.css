@@ -221,10 +221,23 @@ main{
 }
 
 #new-book-dialog{
+    background-color:#fddcd2;
+    border-radius: 10px;
+    border-color: #2c6e49;
     padding: 30px;
     margin: auto;
 }
 
- p label{
+p label{
     display: block;
+}
+
+#new-book-title, #new-book-author, #new-book-pages{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#new-book-submit{
+    margin-top: 10px;
+    width: 100%;
 }
