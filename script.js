@@ -19,7 +19,10 @@
 // array to store each book object
 const myLibrary = []
 const myBooks = []
-const booksBox = document.querySelector("#books-box")
+const continueReadingBox = document.querySelector("#continue-reading")
+const booksBox = document.createElement("div")
+booksBox.id = "books-box"
+continueReadingBox.appendChild(booksBox)
 const addBookBtn = document.querySelector("#add-book-btn")
 const newBookDialog = document.querySelector("#new-book-dialog")
 const newBookSubmit = document.querySelector("#new-book-submit")
@@ -29,18 +32,22 @@ const newBookAuthorInput = document.querySelector("#new-book-author")
 const newBookPagesInput = document.querySelector("#new-book-pages")
 const newBookReadInput = document.querySelector("#new-book-read")
 
+
 addBookBtn.addEventListener("click", () => {
     newBookDialog.showModal()
 })
 
 newBookSubmit.addEventListener("click", (e) => {
     e.preventDefault()
-    console.log(newBookTitleInput.value)
-    console.log(newBookAuthorInput.value)
-    console.log(newBookPagesInput.value)
-    console.log(newBookReadInput.checked)
+    booksBox.textContent = ""
+    addBookToLibrary(newBookTitleInput.value, newBookAuthorInput.value, newBookPagesInput.value, newBookReadInput.checked)
+    makeTheDivBook()
     newBookDialog.close()
 })
+
+// A solution i am thinking about with the duplicate of books
+// create the books.box div from js
+// remove and re-add it when a new is about to be pushed to the page
 
 
 
@@ -65,9 +72,9 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook)
 }
 
-addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
-addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
-addBookToLibrary("Mindset", "Katherine", 504, false)
+// addBookToLibrary("Ogbori Ode", "Ka kan fo", 187, false)
+// addBookToLibrary("Think and Grow Rich", "Tom Hill", 302, true)
+// addBookToLibrary("Mindset", "Katherine", 504, false)
 
 
 // ASS. QUESTION 3 - Write a function that loops through the array and displays each book on the page.
@@ -103,7 +110,7 @@ addBookToLibrary("Mindset", "Katherine", 504, false)
 //     bookTitle.innerText = 
 // }
 
-function displayBook() {
+function makeTheDivBook() {
     myLibrary.forEach(function (book) {
         // console.log(book)
         // CREATE ALL THE HTML ELEMENTS
@@ -116,6 +123,7 @@ function displayBook() {
         const readDeleteLabel = document.createElement("label")
         const readDeleteInput = document.createElement("input")
         const readDeleteButton = document.createElement("button")
+        const uuidValue = document.createElement("span")
 
         // PUT THEIR CLASSES AND IDS
         imgContainer.classList.add("cover")
@@ -127,6 +135,7 @@ function displayBook() {
 
         bookAuthor.classList.add("book-author")
         bookAuthor.innerText = book.author
+        uuidValue.textContent = book.uuid
 
         readDeleteContainer.setAttribute("id", "read-delete")
         readDeleteLabel.textContent = "Read? "
@@ -145,17 +154,15 @@ function displayBook() {
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
         container.appendChild(readDeleteContainer)
+        // container.appendChild(uuidValue)
 
-        // PUT THE CONTAINER IN THE ARRAY OF MYBOOKS
-        myBooks.push(container)
+        // PUSH THE CONTAINER DIV INTO THE ARRAY OF MYBOOKS
+        booksBox.appendChild(container)
     })
 }
 
-function createdBook() {
-    myBooks.forEach(function (abook) {
-        booksBox.appendChild(abook)
-    })
-}
-
-displayBook()
-createdBook()
+// function pushBookToPage() {
+//     myBooks.forEach(function (abook) {
+//         booksBox.appendChild(abook)
+//     })
+// }
