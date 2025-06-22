@@ -24,9 +24,24 @@ const addBookBtn = document.querySelector("#add-book-btn")
 const newBookDialog = document.querySelector("#new-book-dialog")
 const newBookSubmit = document.querySelector("#new-book-submit")
 
-addBookBtn.addEventListener("click", ()=>{
+const newBookTitleInput = document.querySelector("#new-book-title")
+const newBookAuthorInput = document.querySelector("#new-book-author")
+const newBookPagesInput = document.querySelector("#new-book-pages")
+const newBookReadInput = document.querySelector("#new-book-read")
+
+addBookBtn.addEventListener("click", () => {
     newBookDialog.showModal()
 })
+
+newBookSubmit.addEventListener("click", (e) => {
+    e.preventDefault()
+    console.log(newBookTitleInput.value)
+    console.log(newBookAuthorInput.value)
+    console.log(newBookPagesInput.value)
+    console.log(newBookReadInput.checked)
+    newBookDialog.close()
+})
+
 
 
 // constructor for each book template
@@ -136,8 +151,8 @@ function displayBook() {
     })
 }
 
-function createdBook(){
-    myBooks.forEach(function(abook){
+function createdBook() {
+    myBooks.forEach(function (abook) {
         booksBox.appendChild(abook)
     })
 }
