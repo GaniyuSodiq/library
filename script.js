@@ -42,6 +42,10 @@ newBookSubmit.addEventListener("click", (e) => {
     booksBox.textContent = ""
     addBookToLibrary(newBookTitleInput.value, newBookAuthorInput.value, newBookPagesInput.value, newBookReadInput.checked)
     makeTheDivBook() // makeTheDivBook from the library
+    newBookTitleInput.value = ""
+    newBookAuthorInput.value = ""
+    newBookPagesInput.value = ""
+    newBookReadInput.checked = false
     newBookDialog.close()
 })
 
@@ -152,6 +156,18 @@ function makeTheDivBook() {
         // ... i use this number to track each conatiner
         // ... the track is use in this proj when deleting 
         readDeleteButton.addEventListener("click", (e)=>{
+            // at first i didnt knw how to go abt this, so i read the ass which says i shld use data- in html
+            // it adds another layer of complexity which i had to learn
+            // data- is good to have individual uuid on the DOM and bring it to js when needed
+            // i thought i am now ready to remove the obj from myLibrary app and re call makeTheDivBook
+            // but you cant call the function that is creating you, abi?
+            // 
+            // i had to figure out another way
+            // remove the clickedBtn div from the DOM
+            // then use splice to modify the myLibrary array
+            // arr.splice uses index in its inputs
+
+
             container.remove() // remove from the DOM
             const indexToRemove = function(){
                 for (let i = 0; i < myLibrary.length; i++){
@@ -161,6 +177,8 @@ function makeTheDivBook() {
                 }
             }
             myLibrary.splice(indexToRemove, 1) // remove from the library array
+
+            // WHAT I FIRST TRIED
             // myLibrary.forEach(function(abook){
             //     if(abook.uuid === e.target.dataset.uuid){
             //         console.log("We found it!")
