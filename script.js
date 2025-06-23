@@ -152,15 +152,27 @@ function makeTheDivBook() {
         // ... i use this number to track each conatiner
         // ... the track is use in this proj when deleting 
         readDeleteButton.addEventListener("click", (e)=>{
-            console.log(e.target.dataset.uuid)
-            myLibrary.forEach(function(abook){
-                // console.log(abook.uuid)
-                if(abook.uuid === e.target.dataset.uuid){
-                    console.log("We found it!")
-                    console.log(abook)
+            container.remove() // remove from the DOM
+            const indexToRemove = function(){
+                for (let i = 0; i < myLibrary.length; i++){
+                    if (myLibrary[i].uuid === e.target.dataset.uuid){
+                        return i
+                    }
                 }
-            })
-            // makeTheDivBook()
+            }
+            myLibrary.splice(indexToRemove, 1) // remove from the library array
+            // myLibrary.forEach(function(abook){
+            //     if(abook.uuid === e.target.dataset.uuid){
+            //         console.log("We found it!")
+            //         myLibrary.splice(0, 1)
+            //        console.log(myLibrary) 
+                   
+            //     }
+            // })
+            // // console.log(myLibrary)
+            // //  myLibrary.splice(0, 1)
+            // // makeTheDivBook()
+            // console.log(makeTheDivBook()) // undefined makeDiv is its parent fn
         })
 
         container.appendChild(imgContainer)
