@@ -144,6 +144,7 @@ function makeTheDivBook() {
         readDeleteLabel.for = "read"
         readDeleteInput.type = "checkbox"
         readDeleteInput.id = "read"
+        readDeleteInput.checked = book.read
         readDeleteButton.textContent = "❌"
         readDeleteLabel.appendChild(readDeleteInput)
         readDeleteContainer.appendChild(readDeleteLabel)
@@ -166,6 +167,12 @@ function makeTheDivBook() {
             // remove the clickedBtn div from the DOM
             // then use splice to modify the myLibrary array
             // arr.splice uses index in its inputs
+            // 
+            // At first i looked for arr mthod to remove element of the array with modu=yfication
+            // i strugled to find arr that removes an ement snd modifies the array too
+            // then i got some answer in stack 
+            // i looked how to use .splice in my screeenshot note
+            // 
 
 
             container.remove() // remove from the DOM
