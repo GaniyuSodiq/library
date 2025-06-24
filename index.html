@@ -32,7 +32,7 @@
                         <button id="add-book-btn">New Book</button>
                     </div>
                     <!-- <div id="books-box"> -->
-                        <!-- <div class="book">
+                    <!-- <div class="book">
                             <div class="cover"><img src="/images/eegu-alare.jpg" alt="Eegun-Alare"></div>
                             <h5>Chalock Holmes</h5>
                             <span class="book-author">Chalock Holmes</span>
@@ -154,9 +154,11 @@
         <form action="">
             <div id="new-book-details">
                 <p><label for="new-book-title">Book Title: </label><input type="text" id="new-book-title"></p>
+                <p><label for="new-book-cover">Book Cover: </label><input type="file" accept="image/jpeg, image/png image/jpg" id="new-book-cover"></p>
                 <p><label for="new-book-author">Book Author: </label><input type="text" id="new-book-author"></p>
                 <p><label for="new-book-pages">Book No. of Pages: </label><input type="number" id="new-book-pages"></p>
-                <p><label for="new-book-read">Have you read this book: <input type="checkbox" id="new-book-read"></label></p>
+                <p><label for="new-book-read">Have you read this book? <input type="checkbox"
+                            id="new-book-read"></label></p>
                 <button id="new-book-submit">Add Book</button>
                 <!-- <button type="button" id="new-book-submit">Add Book</button> -->
                 <!-- I USED [type="button"] TO PREVENT submit DEFAULT WHICH SEND DATA TO SERVER ON SUBMIT -->

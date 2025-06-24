@@ -28,6 +28,7 @@ const newBookDialog = document.querySelector("#new-book-dialog")
 const newBookSubmit = document.querySelector("#new-book-submit")
 
 const newBookTitleInput = document.querySelector("#new-book-title")
+const newBookCoverInput = document.querySelector("new-book-cover")
 const newBookAuthorInput = document.querySelector("#new-book-author")
 const newBookPagesInput = document.querySelector("#new-book-pages")
 const newBookReadInput = document.querySelector("#new-book-read")
